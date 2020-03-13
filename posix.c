@@ -31,6 +31,12 @@
 #define XCASE 0000004
 #endif
 
+#if defined(CYGWIN) /* define missing termios.h macros for CYGWIN - asm-gerneric/termbits.h */
+#define XCASE	0000004
+#define ECHOPRT	0002000
+#define PENDIN	0040000
+#endif
+
 static int kbdflgs;			/* saved keyboard fd flags      */
 static int kbdpoll;			/* in O_NDELAY mode             */
 
